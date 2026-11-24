@@ -5,3 +5,4 @@ logs/
 dbt_internal_packages/
 .idea/
 .vscode/
+/airflow/dags/__pycache__/
