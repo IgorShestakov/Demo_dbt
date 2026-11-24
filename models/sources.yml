@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: extract_data
+    schema: extract_data
+    tables:
+      - name: orders
+      - name: order_reviews
+      - name: order_items

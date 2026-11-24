@@ -2,3 +2,6 @@ profiles.yml
 target/
 logs/
 .venv/
+dbt_internal_packages/
+.idea/
+.vscode/

@@ -4,3 +4,10 @@ config-version: 2
 
 profile: demo_dbt
 model-paths: ["models"]
+
+models:
+  demo_dbt:
+    transform:
+      +schema: transform_data
+    load:
+      +schema: load_data
