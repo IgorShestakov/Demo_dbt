@@ -20,7 +20,7 @@ def olist_order_items():
         load_olist_csv(
             table_name="order_items",
             create_table_sql="""
-                CREATE TABLE IF NOT EXISTS extract_data.order_items
+                CREATE TABLE IF NOT EXISTS s01_extract_data.order_items
                 (
                     order_id String,
                     order_item_id String,

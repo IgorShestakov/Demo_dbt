@@ -24,7 +24,7 @@ def load_olist_csv(table_name: str, create_table_sql: str) -> None:
         port=conn.port,
         username=conn.login,
         password=conn.password,
-        database="extract_data",
+        database="s01_extract_data",
     ) as client:
         # Имена таблиц и их структура заданы в коде DAG.
         client.command(create_table_sql)

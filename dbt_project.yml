@@ -8,6 +8,6 @@ model-paths: ["models"]
 models:
   demo_dbt:
     transform:
-      +schema: transform_data
+      +schema: "{{ target.schema }}"
     load:
-      +schema: load_data
+      +schema: "{{ 's03_load_data_test' if target.schema == 's02_transform_data_test' else 's03_load_data' }}"

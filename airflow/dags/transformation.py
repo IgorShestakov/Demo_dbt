@@ -4,7 +4,7 @@ import subprocess
 
 from airflow.sdk import dag, task,Asset
 
-orders = Asset("extract_data.orders")
+orders = Asset("s01_extract_data.orders")
 # Пока запускаем вручную. Два запуска одновременно не допускаем.
 @dag(
     schedule=[orders],

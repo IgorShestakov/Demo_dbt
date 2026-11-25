@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: extract_data
-    schema: extract_data
+  - name: s01_extract_data
+    schema: s01_extract_data
     tables:
       - name: orders
       - name: order_reviews

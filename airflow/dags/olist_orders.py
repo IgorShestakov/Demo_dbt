@@ -6,7 +6,7 @@ from zipfile import ZipFile
 import pendulum
 from airflow.sdk import Connection, dag, task, Asset
 
-orders = Asset("extract_data.orders")
+orders = Asset("s01_extract_data.orders")
 
 KAGGLE_URL = "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce"
 ORDERS_FILE = "olist_orders_dataset.csv"
@@ -41,12 +41,12 @@ def olist_orders():
             port=conn.port,
             username=conn.login,
             password=conn.password,
-            database="extract_data",
+            database="s01_extract_data",
         ) as client:
             # Заменяем предыдущую выгрузку полным набором заказов.
-            client.command("TRUNCATE TABLE extract_data.orders")
+            client.command("TRUNCATE TABLE s01_extract_data.orders")
             client.raw_insert(
-                table="extract_data.orders",
+                table="s01_extract_data.orders",
                 insert_block=orders_csv,
                 fmt="CSVWithNames",  # Имена колонок находятся в первой строке CSV.
             )
